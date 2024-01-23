@@ -2,7 +2,19 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 var jwt = require('jsonwebtoken')
+const multer = require('multer');
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads')
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    cb(null, file.fieldname + '-' + uniqueSuffix)
+  }
+})
+
+const upload = multer({ storage: storage })
 const app = express()
 app.use(cors());
 app.use(bodyParser.json());
@@ -15,10 +27,44 @@ mongoose.connect('mongodb://127.0.0.1:27017'); // 30 seconds timeout
 
 
 const Users = mongoose.model('Users', { username: String , password: String });
+const Pets = mongoose.model('Pets', {pname: String, pdesc: String , price: String, category: String , pimage: String})
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
+
+app.post('/add-pet', upload.single('pimage'), function (req, res) {
+  console.log(req.file, req.body);
+  const pname = req.body.pname;
+  const pdesc = req.body.pdesc;
+  const price = req.body.price;
+  const category = req.body.category;
+  const pimage = req.file.path;
+
+  const pet = new Pets({pname: pname, pdesc: pdesc, price:price, category: category, pimage: pimage})
+  pet.save()
+    .then(() => {
+      res.send({message: 'saved success'})
+    })
+    .catch(() => {
+      res.send({message: 'server err'})
+    })
+  return;
+});
+
+app.get('/get-pets',(req,res) => {
+  Pets.find()
+    .then((result)=>{
+      console.log(result, "user data")
+      res.send({message:'success', pets: result})
+    })
+    .catch((err)=> {
+      res.send({message: 'server err'})
+    })
+})
+
+
 
 app.post('/signup', (req, res) => {
   console.log(req.body)

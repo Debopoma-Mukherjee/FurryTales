@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import AddPet from "./components/AddPet";
 import Home from "./components/Home";
+import Adopt from "./components/Adopt";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/add-pet",
     element: <AddPet/>
+  },
+  {
+    path: "/adopt",
+    element: <Adopt/>
   }
 ]);
 
