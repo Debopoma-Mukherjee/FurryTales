@@ -3,6 +3,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 var jwt = require('jsonwebtoken')
 const multer = require('multer');
+const path= require('path');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -16,6 +17,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 const app = express()
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}))

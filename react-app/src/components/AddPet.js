@@ -30,6 +30,10 @@ function AddPet() {
         axios.post(url,formData)
         .then((res)=>{
             console.log(res)
+            if(res.data.message){
+                alert(res.data.message)
+                navigate('/adopt')
+            }
         })
         .catch((err) => {
             console.log(err)

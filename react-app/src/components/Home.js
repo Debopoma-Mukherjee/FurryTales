@@ -6,11 +6,11 @@ import axios from 'axios';
 function Home() {
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (!localStorage.getItem('token')) {
-            navigate('/login');
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (!localStorage.getItem('token')) {
+    //         navigate('/login');
+    //     }
+    // }, []);
 
     // useEffect(() => {
     //     const url = 'http://localhost:4000/get-pets';
