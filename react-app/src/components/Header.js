@@ -19,7 +19,7 @@ function Header()
 
             <nav style={{backgroundColor: '#EA2027'}} class="navbar navbar-expand-lg" >
   <div class="container-fluid">
-    <a class="navbar-brand text-light " href="/">FurryTales</a>
+    <a class="navbar-brand text-light " href="/">FurryTaless</a>
     <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon text-light"></span>
     </button>
