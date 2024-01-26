@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 function Adopt() {
     const [pets, setpets] = useState([]);
+    const [search, setsearch] = useState('');
   
     useEffect(() => {
       const url = 'http://localhost:4000/get-pets';
@@ -21,10 +22,27 @@ function Adopt() {
           alert('server err');
         });
     }, []);
+
+    const handlesearch = (value) =>{
+      setsearch(value);
+    };
+
+    const handleClick = () =>{
+      console.log('pets',pets);
+      
+      let filteredPets=pets.filter((item)=>{
+          if(item.pname.includes(search) || item.pdesc.includes(search))
+          {
+            return item;
+          }
+      });
+      setpets(filteredPets);
+      
+    };
   
     return (
       <div>
-        <Header />
+        <Header search={search} handlesearch={handlesearch} handleClick={handleClick}/>
         
         {
             !!localStorage.getItem('token') && <Link to="/add-pet"> ADD PET </Link>

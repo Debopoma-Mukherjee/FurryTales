@@ -42,7 +42,7 @@ function AddPet() {
 
     return (
         <div>
-            <Header />
+            <Header  />
             <div className="p-3">
         <h2 >ADD PET</h2>
         <label> Pet Name </label>
