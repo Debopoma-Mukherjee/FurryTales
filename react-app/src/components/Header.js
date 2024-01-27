@@ -157,12 +157,13 @@ function Header(props) {
                 placeholder="Search"
                 aria-label="Search"
                 value={props && props.search}
-                onChange={(e)=>props.handlesearch && props.handlesearch(e.target.value)}
+                onChange={(e) => props.handlesearch && props.handlesearch(e.target.value)}
               />
               <button
                 className="btn btn-outline-warning text-light btn-sm "
-                type="submit"
-                onClick={()=> props.handleClick && props.handleClick()}
+                /*type="submit"*/
+                onClick={(e) => props.handleClick && props.handleClick(e)}
+        
               >
                 Search
               </button>

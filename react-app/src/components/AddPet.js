@@ -57,6 +57,7 @@ function AddPet() {
         <label> Pet Category </label>
         <select className="form-control" value={category}
         onChange={(e)=> setcategory(e.target.value)}>
+            <option>Select--</option>
             <option>Cat</option>
             <option>Dog</option>
             <option>Birds</option>
