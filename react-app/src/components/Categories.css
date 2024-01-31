@@ -1,4 +1,4 @@
-.category
+/*.category
 {
     color:rgb(55, 30, 176);
     padding:20px;
@@ -8,4 +8,39 @@
 .categoryh
 {
     padding-left:1160px;
-}
+}*/
+/* Categories.css */
+/* Categories.css */
+.category {
+    color: rgb(55, 30, 176);
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  .category.active {
+    background-color: #ddd; /* Highlight the selected category */
+  }
+  
+  .categoryh {
+    padding-left: 1160px;
+  }
+  
+  .cat-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #D5D8DC;
+  }
+  
+  /* Add this part to limit the height of the category container */
+  .cat-container > div {
+    max-height: 50px;
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .category {
+    flex-grow: 1; /* Distribute available space equally among categories */
+    box-sizing: border-box; /* Include padding and border in total width/height */
+  }
+  
+  
