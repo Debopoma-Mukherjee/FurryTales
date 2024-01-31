@@ -14,6 +14,7 @@ import AddPet from "./components/AddPet";
 import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
+import PetDetail from "./components/PetDetail";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: "/adopt",
     element: <Adopt/>
+  },
+  {
+    path: "/pet/:petId",
+    element: <PetDetail/>
   }
 ]);
 

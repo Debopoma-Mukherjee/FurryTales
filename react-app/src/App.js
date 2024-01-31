@@ -45,6 +45,8 @@ function App(){
           </Route>
           <Route exact path="/Product" element={<Product />}> 
           </Route>
+          {/*<Route exact path="/pet/:id" element={<PetDetails />}> 
+          </Route>*/}
       </Routes>
         
     </div>

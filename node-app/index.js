@@ -67,7 +67,17 @@ app.get('/get-pets',(req,res) => {
 })
 
 
-
+app.get('/get-pet/:id',(req,res) => {
+  console.log(req.params);
+  Pets.find()
+    .then((result)=>{
+      console.log(result, "user data")
+      res.send({message:'success', pets: result})
+    })
+    .catch((err)=> {
+      res.send({message: 'server err'})
+    })
+})
 app.post('/signup', (req, res) => {
   console.log(req.body)
   const username = req.body.username;
