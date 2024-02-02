@@ -16,7 +16,7 @@ function Color({ handleChange }) {
 
   return (
     <div className="ml">
-      <h2 className="sidebar-title color-title">Color</h2>
+      <h5 className="sidebar-title color-title">Color</h5>
 
       <Dropdown onSelect={(selectedKey) => handleChange({ target: { value: selectedKey } })}>
         <Dropdown.Toggle variant="light" id="color-dropdown">

@@ -8,7 +8,7 @@ function ProductCategory({ handleChange }) {
 
   return (
     <div>
-      <h2 className="sidebar-title">Category</h2>
+      <h5 className="sidebar-title">Category</h5>
       <div>
         <Dropdown onSelect={(selectedKey) => handleChange({ target: { value: selectedKey } })}>
           <Dropdown.Toggle variant="light" id="category-dropdown">

@@ -13,7 +13,7 @@ function Price({ handleChange }) {
 
   return (
     <div className="ml">
-      <h2 className="sidebar-title price-title">Price</h2>
+      <h5 className="sidebar-title price-title">Price</h5>
 
       <Dropdown onSelect={(selectedKey) => handleChange({ target: { value: selectedKey } })}>
         <Dropdown.Toggle variant="light" id="price-dropdown">
