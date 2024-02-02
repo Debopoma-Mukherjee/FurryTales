@@ -1,63 +1,25 @@
-/*import { useEffect } from "react";
-import Header from "./Header";
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-
-function Home() {
-    const navigate = useNavigate();
-
-    // useEffect(() => {
-    //     if (!localStorage.getItem('token')) {
-    //         navigate('/login');
-    //     }
-    // }, []);
-
-    // useEffect(() => {
-    //     const url = 'http://localhost:4000/get-pets';
-    //     axios.get(url)
-    //         .then((res) => {
-    //             console.log(res)
-    //         })
-    //         .catch((err)=> {
-    //             console.log(err)
-    //         })
-    // })
-
-    return (
-        <div>
-            <Header />
-            {/* <Link to="/add-pet" > ADD PET </Link> }
-        </div>
-    );
-}
-
-export default Home;*/
-
-import { useEffect, React } from "react";
-import "./HomeSection.css";
+import React from "react";
+import { Link } from "react-router-dom";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import Header from "./Header";
 import Footer from "./Footer";
-import { useNavigate, Link } from "react-router-dom";
+import "./HomeSection.css"; // Import a CSS file for custom styling
 
 function Home() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      navigate("/login");
-    }
-  }, []);
-  
-
   return (
     <div>
-      <Header  />
-      <div className='home-container' /*style={{ backgroundImage:`url(/public/video/Aaratrika Mukherjee (Photo).jpg)`}}*/>
-        <video src='/video/cat2.mp4' autoPlay loop muted />
-        <h1>Pet Lover's Paradise</h1>
-        <p>Because every tail deserves a happy tale!</p>
-        
-    </div>
+      <Header />
+      <div className="video-container">
+        <video src="/video/cat2.mp4" autoPlay loop muted className="w-100 h-100 position-absolute" />
+        <Container fluid className="video-overlay h-100">
+          <Row className="h-100">
+            <Col className="d-flex flex-column justify-content-center align-items-center text-center text-white">
+              <h1 className="display-2">Pet Lover's Paradise</h1>
+              <p className="lead">Because every tail deserves a happy tale!</p>
+            </Col>
+          </Row>
+        </Container>
+      </div>
       <Footer />
     </div>
   );

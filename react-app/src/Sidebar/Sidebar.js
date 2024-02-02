@@ -1,22 +1,19 @@
-import React from 'react'
-import './Sidebar.css'
-import ProductCategory from './ProductCategory/ProductCategory'
-import Price from './Price/Price'
-import Color from './Color/Color'
- function Sidebar({handleChange}) {
-    
-  return (
-    <>
-    <section className="sidebar">
-        <div className="logo-container">
-            <h1>🛒</h1>
-        </div>
-        <ProductCategory handleChange={handleChange}/>
-        <Price handleChange={handleChange}/>
-        <Color handleChange={handleChange}/>
-    </section>
-    </>
+import React from 'react';
+import ProductCategory from './ProductCategory';
+import Price from './Price';
+import Color from './Color';
 
-  )
+function Sidebar({ handleChange }) {
+  return (
+    <section className="sidebar bg-light position-fixed d-flex flex-column ">
+      <div className="p-4">
+
+        <ProductCategory handleChange={handleChange} />
+        <Price handleChange={handleChange} />
+        <Color handleChange={handleChange} />
+      </div>
+    </section>
+  );
 }
+
 export default Sidebar;

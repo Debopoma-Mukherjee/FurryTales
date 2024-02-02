@@ -7,8 +7,6 @@ import Sidebar from "../Sidebar/Sidebar";
 import ProductCard from "../components/ProductCard";
 import products from "../db/Productdata";
 
-
-import { useNavigate ,Link} from 'react-router-dom';
 const Product = () => {
   const[selectedCategory,setSelectedCategory ]=useState(null)
 
@@ -24,11 +22,21 @@ const Product = () => {
   function filteredData(products,selected){
   let filteredProducts=products
 
-  if(selected)
-  {
-    filteredProducts=filteredProducts.filter(({category,newPrice,color,company,title}) => category===selected || color===selected 
-    || newPrice===selected || company===selected || title===selected );
+  if (selected) {
+    filteredProducts = filteredProducts.filter(({ category, newPrice, color, company, title }) => {
+      const numericNewPrice = parseFloat(newPrice);
+  
+      return (
+        category === selected ||
+        color === selected ||
+        company === selected ||
+        title === selected ||
+        (!isNaN(numericNewPrice) && numericNewPrice <= selected)
+      );
+    });
   }
+  
+  
   return filteredProducts.map(({img,title,star,reviews,prevPrice,newPrice})=>(
     <ProductCard 
     key={Math.random()} 
@@ -47,8 +55,8 @@ const Product = () => {
   return (
     <div>
     <Header />
-    <Sidebar handleChange={handleChange}/>
     <NavProduct />
+    <Sidebar handleChange={handleChange}/>
     <Recommended handleClick={handleClick}/>
     <ProductsMain result={result} />
     

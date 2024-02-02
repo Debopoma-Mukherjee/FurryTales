@@ -1,46 +1,40 @@
 import React from "react";
 import Header from "./Header";
-import "./ContactUs.css";
+
 function ContactUs() {
   return (
-    <div className="bcolor">
+    <div className="bg-light">
       <Header />
-      <section className="contact">
-        <div className="content">
-          <h2>Contact Us</h2>
-          <div className="container">
-            <div className="contactInfo">
-              <div className="box">
-                <div className="icon">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                </div>
-                <div className="text">
-                  <h3>Address</h3>
-                  <div className="txt">
-                    
-                  <p>House No:138</p>
-                  <p>Street Name:Parkinson</p>
-                  <p>London</p>
-                  <p>2345678</p>
-                  </div>
+      <section className="contact mt-5">
+        <div className="container">
+          <h2 className="text-center mb-4">Contact Us</h2>
+          <div className="row">
+            <div className="col-md-6 mb-4">
+              <div className="card border-primary">
+                <div className="card-body">
+                  <h3 className="card-title">Address</h3>
+                  <p className="card-text">
+                    House No: 138<br />
+                    Street Name: Parkinson<br />
+                    London<br />
+                    2345678
+                  </p>
                 </div>
               </div>
-              <div className="box">
-                <div className="icon">
-                  <i class="fa fa-phone" aria-hidden="true"></i>
-                </div>
-                <div className="text2">
-                  <h3>Phone</h3>
-                  <p className="txt">0142-89765323</p>
+            </div>
+            <div className="col-md-6 mb-4">
+              <div className="card border-success">
+                <div className="card-body">
+                  <h3 className="card-title">Phone</h3>
+                  <p className="card-text">0142-89765323</p>
                 </div>
               </div>
-              <div className="box">
-                <div className="icon">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                </div>
-                <div className="text2">
-                  <h3>Email</h3>
-                  <p className="txt">furrytales@gmail.com</p>
+            </div>
+            <div className="col-md-6">
+              <div className="card border-info">
+                <div className="card-body">
+                  <h3 className="card-title">Email</h3>
+                  <p className="card-text">furrytales@gmail.com</p>
                 </div>
               </div>
             </div>
