@@ -1,5 +1,4 @@
 import React from 'react'
-import {AiFillStar} from 'react-icons/ai';
 import {BsFillBagHeartFill} from 'react-icons/bs';
 function ProductCard({img,title,star,reviews,prevPrice,newPrice}) {
   return (
